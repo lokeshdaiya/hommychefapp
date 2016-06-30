@@ -1,0 +1,54 @@
+<ion-view view-title="Add your address" ng-init="getCurrentLocation();">
+    <ion-content> 
+        <div class="card" ng-show="adderssFromMap">
+            <div class="list">
+                <div class="item item-divider">
+                    <span>Address Details</span>
+                </div>
+                <div class="item">
+                    <div class="row">
+                        <div class="col col-30">City</div>
+                        <div class="col col-70">{{adderssFromMap.city}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-30">Area</div>
+                        <div class="col col-70">{{adderssFromMap.full_address}}</div>
+                    </div>
+                </div>
+                <label class="item item-input">
+                    <textarea ng-model="adderssFromMap.address" placeholder="Tap to add Building Name/Flat Number">{{adderssFromMap.address}}</textarea>
+                </label>
+            </div>
+        </div>
+        <div class="item" id="currentLocation" ng-show="adderssFromMap">
+            <div class="row">
+                <div class="col-10">
+                    <i class="ion-ios-location custom-location-icon-red"></i>
+                </div>
+                <div class="col-75 truncatedText" >
+                    {{adderssFromMap.full_address}}
+                </div>
+                <div class="col-10">
+                    <a ng-href="#/app/picaddress" class="button button-clear">Edit</a>
+                </div>
+            </div>
+        </div>
+        
+    </ion-content>
+    <ion-footer-bar>
+        <div class="row">
+                <div class="col-10">
+                    <i class="ion-ios-location custom-location-icon-red"></i>
+                </div>
+                <div class="col-75 truncatedText" >
+                    {{adderssFromMap.full_address}}
+                </div>
+                <div class="col-10">
+                    <a ng-href="#/app/picaddress" class="button button-clear">Edit</a>
+                </div>
+            </div>
+        <button class="bar bar-footer bar-balanced" ng-click="createAddress()">
+            <p class="title">Save</p>
+        </button>
+    </ion-footer-bar>
+</ion-view>

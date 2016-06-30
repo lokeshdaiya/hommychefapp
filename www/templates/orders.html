@@ -1,0 +1,211 @@
+<ion-view view-title="Orders" ng-init="getKitchenOrders()">
+        <ion-tabs class="tabs-striped tabs-top tabs-color-assertive tabs-color-light">
+          <ion-tab title="NEW({{liveOrderList.length}})">
+              <ion-view >
+                  <ion-content>
+                      <div ng-hide="liveOrderList" class="loading-spinner"><ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner></div>  
+                      <div ng-if="liveOrderList.length==0" class="row text-center">
+                          <div class="col col-center">
+                              <p>No live orders</p>
+                          </div>
+                      </div>
+                      <div class="card" ng-show="liveOrderList" ng-repeat="order in liveOrderList" ng-init="liveorder.show=false">                          
+                         <div class="row" ng-click="liveorder.show = !liveorder.show">
+                                  <div class="col-50">
+                                      <p class="text">Order id: {{order.orderId}}</p>
+                                      <p class="text">{{order.items|sumOfValue}} items &nbsp;&nbsp; <i class="fa fa-inr"></i>{{order.orderTotal}} </p>
+                                  </div>
+                                  <div class="col-50">
+                                      <p class="text-center color_orange">{{order.orderStatus}} </p>
+                                  </div>
+                         </div>  
+                        <div class="item item-text-wrap text-center" ng-show="liveorder.show">
+                              <div class="item"> 
+                                  <div class="row header">
+                                      <div class="col col-33">
+                                          QTY
+                                      </div>
+                                      <div class="col col-33">
+                                          ITEM
+                                      </div>
+                                      <div class="col col-33">
+                                          PRICE
+                                      </div>
+                                  </div>
+                                  <div class="item items item-text-wrap" ng-repeat="item in order.items">
+                                      <div class="row">
+                                          <div class="col col-33">
+                                              <p class="text">{{item.qty}}</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text">{{item.itemName}}</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text"><i class="fa fa-inr"></i>{{item.price}}</p>
+                                          </div>
+                                      </div>
+                                   </div>
+                                  <div class="item item-text-wrap">
+                                      <div class="row">
+                                          <div class="col col-33">
+                                              <p class="text bold">{{order.items|sumOfValue}}</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text bold">Grand Total</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text bold"><i class="fa fa-inr"></i>{{order.orderTotal}}</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="item"> 
+                                  <div class="row">
+                                      <div class="col-50">
+                                          <button class="button button-assertive button-small"><i class="fa fa-remove"></i> Reject</button>
+                                      </div>
+                                      <div class="col-50">
+                                          <button class="button button-balanced button-small"><i class="fa fa-check"></i>Confirm</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </ion-content>
+              </ion-view>
+          </ion-tab>
+
+          <ion-tab title="ONGOING({{pastOrderList.length}})">
+            <ion-view>
+                  <ion-content>
+                      <div ng-hide="pastOrderList" class="loading-spinner"><ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner></div>  
+                      <div ng-if="pastOrderList.length==0" class="row text-center" >
+                          <div class="col col-center">
+                              <p>No live orders</p>
+                          </div>
+                      </div>
+                      <div class="card" ng-show="pastOrderList" ng-repeat="order in pastOrderList" ng-init="currentorder.show=false">
+                           <div class="row" ng-click="currentorder.show = !currentorder.show">
+                                  <div class="col-50">
+                                      <p class="text">Order id: {{order.orderId}}</p>
+                                      <p class="text">{{order.items|sumOfValue}} items &nbsp;&nbsp; <i class="fa fa-inr"></i>{{order.orderTotal}} </p>
+                                  </div>
+                                  <div class="col-50">
+                                      <p class="text-center color_orange">{{order.orderStatus}} </p>
+                                  </div>
+                            </div>
+                          <div class="item item-text-wrap text-center" ng-show="currentorder.show">
+                              <div class="item"> 
+                                  <div class="row header">
+                                      <div class="col col-33">
+                                          QTY
+                                      </div>
+                                      <div class="col col-33">
+                                          Item
+                                      </div>
+                                      <div class="col col-33">
+                                          Price
+                                      </div>
+                                  </div>
+                                  <div class="item items" ng-repeat="item in order.items">
+                                      <div class="row">
+                                          <div class="col col-33">
+                                              <p class="text">{{item.qty}}</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text">{{item.itemName}}</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text">{{item.price}}</p>
+                                          </div>
+                                      </div>
+                                   </div>
+                                  <div class="item">
+                                      <div class="row">
+                                          <div class="col col-33">
+                                              
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text"><b>GrandTotal</b></p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text"><b>{{order.orderTotal}}</b></p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </ion-content>
+              </ion-view>
+          </ion-tab>
+            
+            <ion-tab title="HISTORY">
+            <ion-view>
+                  <ion-content>
+                      <div ng-hide="pastOrderList" class="loading-spinner"><ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner></div>  
+                      <div ng-if="pastOrderList.length==0" class="row text-center" >
+                          <div class="col col-center">
+                              <p>No live orders</p>
+                          </div>
+                      </div>
+                      <div class="card" ng-show="pastOrderList" ng-repeat="order in pastOrderList" ng-init="pastorder.show=false">
+                          <div class="row" ng-click="pastorder.show = !pastorder.show">
+                                  <div class="col-50">
+                                      <p class="text">Order id: {{order.orderId}}</p>
+                                      <p class="text">{{order.items|sumOfValue}} items &nbsp;&nbsp; <i class="fa fa-inr"></i>{{order.orderTotal}} </p>
+                                  </div>
+                                  <div class="col-50">
+                                      <p class="text-center color_orange">{{order.orderStatus}} </p>
+                                  </div>
+                            </div>
+                          <div class="item item-text-wrap text-center" ng-show="pastorder.show">
+                              <div class="item"> 
+                                  <div class="row header">
+                                      <div class="col col-33">
+                                          QTY
+                                      </div>
+                                      <div class="col col-33">
+                                          Item
+                                      </div>
+                                      <div class="col col-33">
+                                          Price
+                                      </div>
+                                  </div>
+                                  <div class="item items" ng-repeat="item in order.items">
+                                      <div class="row">
+                                          <div class="col col-33">
+                                              <p class="text">{{item.qty}}</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text">{{item.itemName}}</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text"><i class="fa fa-inr"></i> {{item.price}}</p>
+                                          </div>
+                                      </div>
+                                   </div>
+                                  <div class="item">
+                                      <div class="row">
+                                          <div class="col col-33">
+                                              <p class="text bold">Total {{countQty(order.items)}}</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text bold">GrandTotal</p>
+                                          </div>
+                                          <div class="col col-33">
+                                              <p class="text bold"><i class="fa fa-inr"></i>{{order.orderTotal}}</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            
+                          </div>
+                      </div>
+
+                  </ion-content>
+              </ion-view>
+          </ion-tab>
+
+</ion-view>

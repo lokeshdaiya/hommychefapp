@@ -1,0 +1,25 @@
+<ion-view  view-title="Bank Details" ng-init="$parent.bankDetails={}">
+    <ion-content>
+        <label class="item item-input">
+            <input type="text"  placeholder="Account holder name" ng-model="bankDetails.accHolder"/>
+        </label>
+        <label class="item item-input">
+            <input type="text"  placeholder="Account Number" ng-model="bankDetails.accNumber"/>
+        </label>
+        <label class="item item-input">
+            <input type="text"  placeholder="IFSC" ng-model="bankDetails.IFSC"/>
+        </label>
+        <label class="item item-input">
+            <input type="text"  placeholder="Bank Name" ng-model="bankDetails.bankName"/>
+        </label>
+        <label class="item item-input">
+            <input type="text"  placeholder="Branch Area" ng-model="bankDetails.branchArea"/>
+        </label>
+        <label class="item item-input">
+<!--            <button class="button button-full button-balanced" ui-sref="app.mykitchen">Save</button>-->
+            <button class="button button-full button-balanced" ng-click="createbankDetails()">Save</button>
+        </label>
+    
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,15 @@
+<ion-view view-title="Change Location">
+  <ion-content class="location">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" g-places-autocomplete ng-model="myScopeVar" options="autocompleteOptions" placeholder="Search location"/>
+        </label>
+    
+        <div class="item ">
+            <a class="item-icon-left" href="#" ng-click="goBack()">
+              <i class="icon ion-android-locate"></i>
+              Use My Location
+            </a>
+        </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,40 @@
+<ion-view  view-title="Join Us" ng-init="newUser={};getCurrentLocation();">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="Name" ng-model="newUser.name"/>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Phone no</span>
+                <input type="number" placeholder="Phone no" ng-model="newUser.mobile"/>
+            </label>
+			<label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="Email" ng-model="newUser.email"/>
+            </label>
+			<label class="item item-input item-floating-label">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="Password" ng-model="newUser.password"/>
+            </label>
+			<div class="card" ng-show="currentAddress" id="currentLocation">
+                            <div class="row">
+				<div class="col-10">
+					<i class="ion-ios-location custom-location-icon-red"></i>
+				</div>
+				<div class="col-75 truncatedText" ng-show="currentAddress">
+					{{currentAddress}}
+				</div>
+				<div class="col-10">
+					<a ng-href="#/app/location" class="button button-clear">Edit</a>
+				</div>
+                            </div>
+                            </div>
+			
+            <label class="item">
+                <button class="button button-full button-balanced" ng-click="signUp()">Submit</button>
+            </label>
+			
+        </div>
+    </ion-content>
+</ion-view>

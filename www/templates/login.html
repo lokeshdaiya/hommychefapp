@@ -1,0 +1,29 @@
+<ion-view  view-title="Login" ng-init="user={}" hide-nav-bar="true">
+    <ion-content style="background: url(img/hommy.jpg) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+                <h1 class="color_white">HommyFoods</h1>
+                <h2 class="color_white">HomeChef</h2>
+            </div>
+        </div>
+        
+        <div class="list form-elements">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">UserName</span>
+                <input type="email" placeholder="Username" ng-model="user.email"/>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="Password" ng-model="user.password"/>
+            </label>
+            <label class="item item-input">
+                <button class="button button-full button-balanced" ng-click="signIn()">Submit</button>
+            </label>
+        </div>
+        
+        <div class="text-center">
+            <a ng-href="#/app/signup" class="button button-clear"><h2 class="color_white">Become HomeChef</h2></a>
+        </div>
+    </ion-content>
+</ion-view>

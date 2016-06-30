@@ -1,0 +1,44 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-balanced">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent">
+
+    </ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="menu-header">
+        <div class="item item-avatar">
+            <span class="avatar" style="background: url('img/logo.png'); background-size: cover;"></span>
+            <p>Hello!</p>
+            <p>{{username?username:"Guest"}}</p>
+        </div>         
+    </ion-header-bar>
+    <ion-content class="has-expanded-header">
+        <ion-list>
+            <ion-item menu-close href="#/app/login" ng-show="userid=='undefind' || userid==null">
+                Login
+            </ion-item>
+            <ion-item nav-clear menu-close href="#/app/mykitchen"  ng-show="userid!='undefind' && userid!=null">
+                MY KITCHEN
+            </ion-item>
+            <ion-item nav-clear menu-close href="#/app/orders" ng-show="userid!='undefind' && userid!=null">
+                ORDERS
+            </ion-item>
+            <ion-item nav-clear menu-close href="#/app/kitchen" ng-show="userid!='undefind' && userid!=null">
+                KITCHEN
+            </ion-item>
+            <ion-item menu-close ng-click="logout()" ng-show="userid!='undefind' && userid!=null">
+                LOGOUT
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+  </ion-side-menu>
+</ion-side-menus>

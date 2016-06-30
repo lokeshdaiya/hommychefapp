@@ -1,0 +1,50 @@
+<ion-view  view-title="NEW ITEM" ng-init="item={};getCuisineList();">
+    <ion-content>
+        <div class="item item-divider">
+            Basic Info
+        </div>
+        <label class="item item-input">
+            <input type="text" placeholder="Name" ng-model="item.name"/>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Cuisine
+            </div>
+            <select ng-model="item.cuisine">
+                <option value="cuisine._id" ng-repeat="cuisine in cuisines">{{cuisine.name}}</option>
+            </select>
+        </label>
+        <label class="item item-input">
+            <input type="text" placeholder="Price" ng-model="item.price"/>
+        </label>
+        <div class="item item-divider">
+            Other Info
+        </div>
+        <div class="Item">
+            <div class="row">
+                <div class="col col-50">
+                    <ion-radio ng-model="item.isVeg" ng-value="true">Veg</ion-radio>
+                </div>
+                <div class="col col-50">
+                    <ion-radio ng-model="item.isVeg" ng-value="false">Non-Veg</ion-radio>
+                </div>
+            </div> 
+        </div>
+        <ion-item ng-href="#">
+            Custom Options
+        </ion-item>
+        <ion-item ng-href="#/app/addons">
+            Add-ons
+        </ion-item>
+        <ion-item href="#">
+            Tax Class
+        </ion-item>
+
+        <label class="item item-input">
+            <button class="button button-full button-balanced" ng-click="">Submit</button>
+        </label>
+
+
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,293 @@
+/* Empty. Add your own CSS if you like */
+/*Universal*/
+.clear-padding{
+  padding-left: 0;
+  padding-right:0;
+}
+.separator{
+  border-bottom: 1px solid #e8e8e8;
+}
+.full-width{
+  width: 100%;
+}
+.font-98{
+    font-size: 98%;
+}
+.lighten{
+    color: #736E6E;
+}
+.margin-top{
+    margin-top: 0;
+}
+.button-small.button-icon:before{
+    font-size: 20px !important;
+}
+.user-details i{
+    font-size: 32px;
+    margin: 10px;
+}
+.chef{
+  position: relative;
+}
+.chef .ratings{
+  text-align: right;
+}
+.chef .ratings i{
+    margin: 0 3px;
+    text-shadow: 1px 1px #ccc;
+}
+.chef-card{
+    margin: 5px !important;
+}
+.chef-card .row,.chef-card .col-20{
+    padding: 0;
+}
+ion-list i{
+  margin-right: 7px;
+  font-size: 18px;
+}
+.chef-card .col.assertive.text-center{
+    padding-bottom: 0;
+    padding-top: 8px;
+}
+
+.pac-logo:after{
+  background-image:none !important;
+  height:1px !important;
+}
+.location .icon{
+    font-size: 18px;
+}
+
+/*FilterNavigation*/
+.filter-nav {
+    background: rgba(204, 204, 204, 0.09);
+}
+.filter-nav .col{
+  position: relative;
+  padding: 0;
+}
+.filter-nav .filterbutton.full-width{
+  position: relative;
+}
+.filter-nav .filterbutton.full-width span:first-child{
+  width: 24px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top:0;
+  padding: 0 5px;
+  color: #fff;
+}
+.filter-nav .filterbutton.full-width strong{
+  margin-left: 20px;
+}
+.filter-nav li.filter{
+    display: inline-block;
+    width: 75px;
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    min-height: 20px !important;
+    line-height: 20px;
+    margin: 6px;
+    
+}
+.filter-nav li a{
+    text-decoration:none;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+}
+/*Footer Styles*/
+.hommy-footer .ion-bag{
+  font-size: 30px !important;
+  padding-left: 10px;
+}
+.item-action{
+  text-align: right;
+  padding-right: 10px;
+  font-size: 24px;
+}
+.item-action .button{
+  display: inline;
+  padding: 8px 12px;
+  font-size: 14px !important;
+  min-width: 22px !important;
+}
+
+.item-action .item-add-button-active,.item-action .item-add-button-active:hover{
+    background-color: #fff;
+    color:#ef473a;
+}
+
+.item-action span{
+  font-size: 14px !important;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+/*Star Colors*/
+.star-green-dark{
+  color: #1B5E20;
+}
+.star-green-light{
+  color: #558B2F;
+}
+.star-green-ex-light{
+  color: #7CB342;
+}
+.star-light{
+  color: #FFE082;
+}
+
+/*BackGround Colors*/
+.back-green{
+  background: #33cd5f;
+}
+.back-gray{
+  background: gray;
+}
+
+
+/*location*/
+.custom-location-icon-red {
+  font-size: 25px;
+  color : red;
+  padding:2px;
+  font-weight: 200;
+}
+.custom-location-icon-green{
+    color: green;
+    padding:1px
+
+}
+.truncatedText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+#currentLocation .button{
+    color:red;
+    font-size: 15px;
+
+}
+
+/*loading css*/
+.loading-spinner {
+    text-align: center;
+}
+
+.spinner svg {
+    width: 19% !important;
+    height: 85px !important;
+    margin-top: 200px !important;
+}
+
+.menu-header{
+    min-height: 150px;
+}
+
+.has-expanded-header {
+    top: 150px!important;
+}
+
+
+.item-avatar i:first-child, .item-avatar .item-img {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 36px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 4px; 
+    
+}
+
+.menu-header .item{
+    border-width:0px;
+}
+
+/*login page*/
+.content {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.app-icon {
+    background-color: #fff;
+    background: url('../img/logo.png') center;
+    background-size: cover;
+    border-radius: 50%;
+    height: 125px;
+    margin: 0 auto;
+    width: 125px;
+}
+
+.veg-icon {
+    background: url('../img/Veg.png') center;
+    background-size: cover;
+    height: 64px;
+    width: 64px;
+}
+
+.form-elements{
+        margin: 10px 15px;
+}
+
+.form-elements .item.item-floating-label {
+     border-bottom: 0px !important;
+}
+
+.form-elements .item.item-floating-label input{
+    padding: 20px 10px;
+     background-color: #fff;
+     border-radius:5px;
+}
+
+
+/*order page css*/
+
+.col {
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+.items:nth-child(2n+1) {
+    background-color:#e8e8e8;
+}
+
+.color_white{
+    color:#fff;
+}
+
+.open{
+    color:green;
+    text-transform:capitalize;
+}
+
+.closed{
+    color:red;
+    text-transform:capitalize;    
+}
+
+.item-divider{
+    background-color: #f5f5f5;
+    color: #222;
+    }
+    
+/* mykitchen */
+.image-picker{
+    background-color:#87CEEB;
+    min-height: 100px;    
+}
+

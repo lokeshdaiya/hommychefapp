@@ -1,0 +1,72 @@
+<ion-view  view-title="MY KITCHEN">
+    <ion-content ng-init="myKitchenInit();">
+        <div class="item item-divider">
+            Picture
+        </div>
+        <label class="item text-center" ng-click="getKitchenPic()">
+            <div class="row" ng-hide="kitchenImageUrl">
+                <div class="col col-33 col-offset-33 image-picker">
+                    <br />
+                    <i class="fa fa-plus fa-2x"></i><br />
+                    <span class="item-text-wrap">ADD Kitchen Picture</span>
+                </div>
+             </div>
+            
+            <div class="row" ng-show="kitchenImageUrl" ng-if="kitchenImageUrl">
+                <div class="col col-33 col-offset-33 image">
+                    <img src="{{kitchenImageUrl}}" width="100px" height="100px" />
+                </div>
+             </div>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">
+                    Delivery time
+            </div>
+            <select ng-model="mykitchen.deliveryTime">
+                <option value="{{item.Key}}" ng-repeat="item in deliveryTimeArray">{{item.Value}}</option>
+            </select>
+        </label>
+        <ion-item ng-href="#">
+            Kitchen Timings
+        </ion-item>
+        <ion-item href="#/app/addAddress">
+            <div class="row">
+                <div class="col col-50">Address</div>
+                <div class="col col-50" ng-show="addressValidated"><i class="fa fa-check fa-2x balanced"></i></div>
+             </div>   
+        </ion-item>
+        <ion-item>
+            <ion-checkbox class="checkbox-balanced" ng-model="mykitchen.pureVeg">My Kitchen is Pure veg</ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-checkbox class="checkbox-balanced" ng-model="isPackagegNeeded">I Need Package material From Hommy(Charges apply)</ion-checkbox>
+        </ion-item>
+        <label class="item text-center" ng-click="getIDProofPic()">
+            <div class="row" ng-hide="IDproofImage">
+                <div class="col col-33 col-offset-33 image-picker">
+                    <br />
+                    <i class="fa fa-plus fa-2x"></i><br />
+                    <span class="item-text-wrap">ADD ID Proof</span>
+                </div>
+             </div>
+            
+            <div class="row" ng-show="IDproofImage" ng-if="IDproofImage">
+                <div class="col col-33 col-offset-33 image">
+                    <img src="{{IDproofImage}}"  width="100px" height="100px">
+                </div>
+             </div>
+        </label>
+        <ion-item ng-href="#/app/bankDetails">
+            <div class="row">
+                <div class="col col-50">Bank Details</div>
+                <div class="col col-50" ng-show="bankDetailsValidated"><i class="fa fa-check fa-2x balanced"></i></div>
+             </div>
+        </ion-item>
+        <label class="item item-input">
+            <input type="number" placeholder="Alternative Phone" ng-model="mykitchen.secondaryPhone" />
+        </label>
+        <label class="item item-input">
+            <button class="button button-full button-balanced" ng-click="insertKitchen()">Submit</button>
+        </label>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,29 @@
+<ion-view view-title="Kitchen">
+  <ion-content ng-init="getKitchenDishes()">
+      
+          <div class="item item-divider">
+              Status
+          </div>
+          <div class="item">
+              <a ng-click="updateKitchenStatus()">
+                  <div class="row">
+                      <div class="col col-50 balanced bold" ng-class="kitchenStatus">
+                          {{kitchenStatus}}
+                      </div>
+                      <div class="col col-50 lighten right">
+                          Tap to {{tapText}}
+                      </div>
+                  </div>
+              </a>
+          </div>
+          
+          <div class="item item-divider">
+              Menu
+          </div>
+          
+          <ion-toggle ng-repeat="dish in kitchenDishes" ng-model="dish.available" ng-checked="dish.available" ng-change="updateDishStatus(dish)">{{dish.name}}</ion-toggle>
+          <div class="item">
+              <button class="button button-block button-balanced" ui-sref="app.addItem">+ Add items</button>
+          </div>  
+  </ion-content>
+</ion-view>

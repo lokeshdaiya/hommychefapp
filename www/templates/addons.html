@@ -1,0 +1,43 @@
+<ion-view  view-title="Add-ons" ng-init="addOnArray=[];addMore();">
+    <ion-content>
+        <div class="item item-divider">
+            Add on 
+        </div>
+        <div class="item" ng-if="addOnArray.length>0">
+            <div class="row">
+                <div class="col col-50">AddOn Name</div>
+                <div class="col col-50">Price (<i class="fa fa-inr"></i>)</div>
+            </div>
+            <div class="row" ng-repeat="addon in addOnArray">
+                <div class="col col-50">{{addon.name}}</div>
+                <div class="col col-50">{{addon.price}}</div>
+            </div>
+        </div>
+
+        <div ng-repeat="form in addOnForm">
+        <label class="item item-input">
+            <input type="text" placeholder="Name" ng-model="addons.name"/>
+        </label>
+        
+        <label class="item item-input">
+            <input type="text" class="fontAwesome" placeholder="Price (&#xf156;)" ng-model="addons.price"/>
+        </label>
+        <label class="item item-input">
+            <button class="button button-full button-balanced" ng-click="addAddOn()">Save</button>
+        </label>
+        </div>
+        <label class="item item-input" ng-if="addOnArray.length>0">
+            <button class="button button-full button-balanced" ng-click="addMore()">+Add</button>
+        </label>
+        <br />
+        <br />
+        <br />
+        <br/>
+        <label class="item item-input">
+            <button class="button button-full button-balanced" ng-click="">+Submit</button>
+        </label>
+
+
+    </ion-content>
+
+</ion-view>
